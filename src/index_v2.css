@@ -1,0 +1,528 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mobile {
+    .ant-popover {
+        font-size: 1.5rem !important;
+    }
+    .note {
+        color: gray;
+        font-size: 0.6rem;
+        font-style: italic;
+    }
+    .header {
+        position: fixed;       /* 固定在页面 */
+        top: 0;                /* 与顶部对齐 */
+        left: 0;               /* 与左侧对齐 */
+        right: 0;              /* 与右侧对齐 */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 5%;
+        background: #000;
+        border-bottom: 1px solid #222;
+        z-index: 1000;         /* 确保在其他元素之上 */
+    }
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        min-width: 220px;
+    }
+
+    .header-menu-icon {
+        font-size: 1.5rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .logo-image {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 10px;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .layout-content {
+        min-height: calc(100vh - 3rem);
+        margin-top: 3rem;
+    }
+    .hero {
+        max-width: 100%;
+        position: relative;
+        text-align: center;
+        padding: 20px;
+        background-image: url('hero-bg.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: #fff;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #e9e9e9;
+        z-index: 2; 
+        position: relative;
+    }
+
+    .body {
+        font-size: 1rem;
+    }
+
+    .ant-layout {
+        font-size: 0.8rem !important;
+    }
+
+    .ant-table {
+        font-size: 1rem;
+        color: #c7c7c7;
+        font-family: Arial, sans-serif;
+    }
+
+    .ant-table-thead>tr>th {
+        font-weight: 600px;
+        font-size: 0.5rem;
+        color: #c7c7c7;
+    }
+
+    .ant-table-tbody>tr>td {
+        font-size: 0.5rem;
+        color: #c7c7c7;
+    }
+
+    .ant-table-wrapper .ant-table-cell{
+        padding: 0.2rem !important;
+    }
+
+    .link {
+        font-size: 1rem;
+        color: #82CFFF !important;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .paragraph {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .title-container {
+        position: relative;
+        text-align: center;
+        padding: 30px 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: #fff;
+    }
+
+    .title {
+        font-size: 1.6rem;
+        margin-bottom: 0px;
+        font-weight: 600;
+        color: #e9e9e9;
+        z-index: 2;
+        position: relative;
+    }
+
+    .title-desc {
+        display: flex;
+        /* 启用flex布局 */
+        flex-direction: column;
+        /* 设置为纵向排列 */
+        gap: 1rem;
+        /* 设置子元素的纵向间距 */
+        text-align: left;
+        font-size: 0.8rem;
+        color: #c7c7c7;
+        z-index: 2;
+        padding: 0 20px;
+        position: relative;
+    }
+    .title-desc-text {
+        /* text-align: left; */
+        font-size: 0.8rem;
+        color: #c7c7c7;
+        z-index: 2;
+        padding: 0 20px;
+    }
+
+    .text {
+        font-size: 0.8rem;
+        color: #c7c7c7;
+        z-index: 2;
+        position: relative;
+    }
+
+    .list-head {
+        font-size: 0.8rem;
+        color: #c7c7c7;
+        font-weight: 400;
+        margin-bottom: 5px;
+    }
+
+    .list-title {
+        font-size: 0.8rem;
+        color: #c7c7c7;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .ant-list .ant-list-item {
+        font-size: 0.8rem !important;
+        color: #c7c7c7 !important;
+        align-items: left !important;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Barlow', sans-serif;
+        background-color: #0e0e0e;
+        color: #fff;
+    }
+
+    .app {
+        margin: 0;
+    }
+
+    .nav {
+        font-size: 0.8rem;
+        display: flex;
+        gap: 15px;
+        white-space: nowrap;
+    }
+
+    .nav-link {
+        color: #ccc;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+
+    .nav-link:hover {
+        color: #fff;
+    }
+
+    .nav-link.active {
+        background-color: #333;
+        /* 当前按钮背景颜色 */
+        color: #fff;
+        /* 当前按钮字体颜色 */
+        font-weight: 500;
+    }
+
+    .social {
+        font-size: 1.2rem;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 5px 10px;
+        border: 1px solid #353535;
+        border-radius: 8px;
+    }
+
+    .content {
+        max-width: 1680px;
+        margin: 0 auto;
+    }
+
+    .faq-number {
+        font-size: 1.5rem !important;
+        min-width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+
+    .faq-title {
+        font-size: 1rem !important;
+    }
+
+    .faq-content {}
+    .faq-close-icon {
+        font-size: 1rem !important;
+    }
+}
+@media (max-width: 1024px) {
+    .ant-popover {
+        font-size: 1rem !important;
+    }
+    .ant-divider-with-text {
+        font-size: 1.0rem !important;
+    }
+    .ant-drawer-content-wrapper {
+        width: 250px !important;
+    }
+}
+.download-note {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+.download-icon {
+    font-size: 1.5rem;
+    /* color: #4abdff; */
+}
+.download-text {
+    font-size: 1rem;
+    /* color: #4abdff; */
+    margin-left: 5px;
+}
+.note {
+    color: gray;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5%;
+    background: #000;
+    border-bottom: 1px solid #222;
+
+    position: fixed;       /* 固定在页面 */
+    top: 0;                /* 与顶部对齐 */
+    left: 0;               /* 与左侧对齐 */
+    right: 0;              /* 与右侧对齐 */
+    z-index: 1000;         /* 确保在其他元素之上 */
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    min-width: 280px;
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.hero {
+    max-width: 100%;
+    position: relative;
+    text-align: center;
+    padding: 20px 10%;
+    background-image: url('hero-bg.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+}
+.hero-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #e9e9e9;
+    z-index: 2;
+    position: relative;
+}
+.terms {
+    background-color: white !important;
+}
+
+.ant-table {
+    font-size: 1rem;
+    color: #c7c7c7;
+    font-family: Arial, sans-serif;
+}
+
+.ant-table-thead>tr>th {
+    font-weight: 600px;
+    font-size: 1rem;
+    color: #c7c7c7;
+}
+
+.ant-table-tbody>tr>td {
+    font-size: 1rem;
+    color: #c7c7c7;
+}
+
+.link {
+    font-size: 1rem;
+    color: #82CFFF !important;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.paragraph {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.link:hover {
+    color: #40A9FF !important;
+}
+
+.title-bg-1 {
+    background-image: url('title-bg-1.webp');
+}
+
+.title-bg-2 {
+    background-image: url('title-bg-2.webp');
+}
+
+.title-bg-3 {
+    background-image: url('title-bg-3.webp');
+}
+
+.title-container {
+    position: relative;
+    text-align: center;
+    padding: 30px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+}
+
+.title {
+    font-size: 2rem; 
+    margin-bottom: 0px;
+    font-weight: 600;
+    color: #e9e9e9;
+    z-index: 2;
+    position: relative;
+}
+
+.text {
+    font-size: 1.0rem;
+    color: #c7c7c7;
+    z-index: 2;
+    position: relative;
+}
+
+.list-head {
+    font-size: 1rem;
+    color: #c7c7c7;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.list-title {
+    font-size: 1rem;
+    color: #c7c7c7;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.title-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 1rem;
+    color: #c7c7c7;
+    z-index: 2;
+    padding: 0 20px;
+    position: relative;
+}
+
+.title-desc-text {
+    font-size: 1rem;
+    color: #c7c7c7;
+    z-index: 2;
+    padding: 0 20px;
+    position: relative;
+}
+.ant-list .ant-list-item {
+    font-size: 1.0rem !important;
+    color: #c7c7c7 !important;
+    align-items: left !important;
+}
+
+body {
+    margin: 0;
+    font-family: 'Barlow', sans-serif;
+    background-color: #0e0e0e;
+    color: #fff;
+}
+
+.app {
+    margin: 0;
+}
+
+.nav {
+    font-size: 1.2rem;
+    display: flex;
+    gap: 15px;
+    white-space: nowrap;
+}
+
+.nav-link {
+    color: #ccc;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.nav-link.active {
+    background-color: #333;
+    /* 当前按钮背景颜色 */
+    color: #fff;
+    /* 当前按钮字体颜色 */
+    font-weight: 500;
+}
+
+.social {
+    font-size: 1.2rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border: 1px solid #353535;
+    border-radius: 8px;
+}
+
+.content {
+    max-width: 1680px;
+    margin: 0 auto;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2b2b2b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5e5e5e;
+    border-radius: 4px;
+    border: 2px solid #2b2b2b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+::-webkit-scrollbar-corner {
+    background: #2b2b2b;
+}

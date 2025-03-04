@@ -1,0 +1,80 @@
+/* 全局滚动条样式 */
+::-webkit-scrollbar {
+  width: 12px; /* 滚动条宽度 */
+  height: 12px; /* 滚动条高度 */
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+  background: #2b2b2b; /* 深色背景 */
+  /* border-radius: 4px; 圆角轨道 */
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  background: #5e5e5e; /* 滑块颜色 */
+  border-radius: 4px; /* 圆角滑块 */
+  border: 2px solid #2b2b2b; /* 边框以融合背景 */
+}
+
+/* 鼠标悬停时滚动条滑块的样式 */
+::-webkit-scrollbar-thumb:hover {
+  background: #666; /* 悬停颜色 */
+}
+
+::-webkit-scrollbar-corner {
+  background: #2b2b2b; /* 与背景一致的颜色 */
+}
+
+
+
+.markdown-container h1 {
+  font-size: 32px; /* 调整一级标题字体大小 */
+}
+
+.markdown-container h2 {
+  font-size: 24px; /* 调整二级标题字体大小 */
+}
+
+.markdown-container p {
+  font-size: 16px; /* 调整段落文字大小 */
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
