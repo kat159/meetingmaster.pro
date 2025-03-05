@@ -14,7 +14,7 @@ const downloadData = [
         link: `https://github.com/meetingmaster/meeting-master-general/releases/download/v${curVersion}/meeting-master_${curVersion}.exe`,
         // link: `https://github.com/meetingmaster/meeting-master-general/releases/download/v3.6.8/meeting-master_3.6.8.exe`,
     }
-];
+]; 
 
 const TT_FAQs_ = ({ faqs, head, botton }) => {
     return (
