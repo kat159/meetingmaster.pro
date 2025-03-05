@@ -4,14 +4,15 @@ import { CloseOutlined, DownloadOutlined, PlusOutlined, VideoCameraOutlined, Win
 import { Button, List, Popover, Space, Table } from "antd";
 import { C_FAQs } from "./P_FAQ_V2";
 
-const curVersion = '3.5.6'
+const curVersion = '3.6.8';
 const downloadData = [
     {
         platform: "Windows",
         icon: <WindowsFilled />,
         version: curVersion,
         name: `Download for Windows v${curVersion}`,
-        link: "https://meeting-master.b-cdn.net/meeting-master_3.5.6.exe",
+        link: `https://github.com/meetingmaster/meeting-master-general/releases/download/v${curVersion}/meeting-master_${curVersion}.exe`,
+        // link: `https://github.com/meetingmaster/meeting-master-general/releases/download/v3.6.8/meeting-master_3.6.8.exe`,
     }
 ];
 
