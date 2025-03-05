@@ -310,7 +310,7 @@ export default function P_GetStarted_V2() {
                         content={<div>
                             {
                                 downloadData.map(({ platform, icon, version, link }, index) => (
-                                    <div key={index}>
+                                    <div key={index}> 
                                         <div className="download-note">
                                             Your browser or operating system might flag our software as potentially unsafe, but please rest assured — our software is completely safe to use. This is a false positive caused by the way some systems handle less commonly downloaded software.
                                         </div>
