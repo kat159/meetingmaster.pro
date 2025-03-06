@@ -779,9 +779,9 @@ function Cards_DeskTop({
 
                         <ul className="option-features">
                             <li>{option.credits.toLocaleString()} premium credits</li>
-                            <li>{option.free_trial_cap.toLocaleString()} trial credit stock</li>
                             <li>Earn up to {option.referrer_eligiblity_credits.toLocaleString()} referral credits from referring new users.</li>
                             <li>New users can earn up to {option.referral_credits.toLocaleString()} referral credits by setting a referrer.</li>
+                            <li>{option.free_trial_cap.toLocaleString()} trial credit stock</li>
                             <li>+{option.trial_per_session_cap.toLocaleString()} trial credit limit per interview.</li>
                             <li>Full access to all app features.</li>
                         </ul>
