@@ -97,38 +97,6 @@ export function C_CreditCost() {
             minInputTokens: `${modelCreditsCost?.["gpt-4o"]?.minInputTokens} tokens.`,
             minOutputTokens: `${modelCreditsCost?.["gpt-4o"]?.minOutputTokens} tokens.`
         },
-        // 'claude-3-5-sonnet-latest': {
-        //     minInputTokens: 20,
-        //     minOutputTokens: 20,
-        //     rateLimit: 30, // 30次/分钟
-        //     input: 3 * 4 * 1000 / 1000000, // 成本是0.15 翻3倍
-        //     output: 15 * 4 * 1000 / 1000000, // 成本是0.6 翻3倍
-        //   },
-        //   'claude-3-5-haiku-latest': {
-        //     minInputTokens: 20,
-        //     minOutputTokens: 20,
-        //     rateLimit: 30, // 30次/分钟
-        //     input: 1 * 4 * 1000 / 1000000, // 成本是0.15 翻3倍
-        //     output: 5 * 4 * 1000 / 1000000, // 成本是0.6 翻3倍
-        //   },
-        {
-            key: 'claude-3-5-sonnet',
-            model: 'claude-3-5-sonnet',
-            inputCost: `${modelCreditsCost?.['claude-3-5-sonnet-latest']?.input * 1000} credits per 1000 tokens.`,
-            outputCost: `${modelCreditsCost?.["claude-3-5-sonnet-latest"]?.output * 1000} credits per 1000 tokens.`,
-            rateLimit: `${modelCreditsCost?.["claude-3-5-sonnet-latest"]?.rateLimit} requests per minute.`,
-            minInputTokens: `${modelCreditsCost?.["claude-3-5-sonnet-latest"]?.minInputTokens} tokens.`,
-            minOutputTokens: `${modelCreditsCost?.["claude-3-5-sonnet-latest"]?.minOutputTokens} tokens.`
-        },
-        {
-            key: 'claude-3-5-haiku',
-            model: 'claude-3-5-haiku',
-            inputCost: `${modelCreditsCost?.['claude-3-5-haiku-latest']?.input * 1000} credits per 1000 tokens.`,
-            outputCost: `${modelCreditsCost?.["claude-3-5-haiku-latest"]?.output * 1000} credits per 1000 tokens.`,
-            rateLimit: `${modelCreditsCost?.["claude-3-5-haiku-latest"]?.rateLimit} requests per minute.`,
-            minInputTokens: `${modelCreditsCost?.["claude-3-5-haiku-latest"]?.minInputTokens} tokens.`,
-            minOutputTokens: `${modelCreditsCost?.["claude-3-5-haiku-latest"]?.minOutputTokens} tokens.`
-        },
         {
             key: '4',
             model: 'gpt-o1-mini',
@@ -147,6 +115,42 @@ export function C_CreditCost() {
             minInputTokens: `${modelCreditsCost?.["o1"]?.minInputTokens} tokens.`,
             minOutputTokens: `${modelCreditsCost?.["o1"]?.minOutputTokens} tokens.`
         },
+        {
+            key: 'claude-3-5-haiku',
+            model: 'claude-3-5-haiku',
+            inputCost: `${modelCreditsCost?.['claude-3-5-haiku-latest']?.input * 1000} credits per 1000 tokens.`,
+            outputCost: `${modelCreditsCost?.["claude-3-5-haiku-latest"]?.output * 1000} credits per 1000 tokens.`,
+            rateLimit: `${modelCreditsCost?.["claude-3-5-haiku-latest"]?.rateLimit} requests per minute.`,
+            minInputTokens: `${modelCreditsCost?.["claude-3-5-haiku-latest"]?.minInputTokens} tokens.`,
+            minOutputTokens: `${modelCreditsCost?.["claude-3-5-haiku-latest"]?.minOutputTokens} tokens.`
+        },
+        {
+            key: 'claude-3-5-sonnet',
+            model: 'claude-3-5-sonnet',
+            inputCost: `${modelCreditsCost?.['claude-3-5-sonnet-latest']?.input * 1000} credits per 1000 tokens.`,
+            outputCost: `${modelCreditsCost?.["claude-3-5-sonnet-latest"]?.output * 1000} credits per 1000 tokens.`,
+            rateLimit: `${modelCreditsCost?.["claude-3-5-sonnet-latest"]?.rateLimit} requests per minute.`,
+            minInputTokens: `${modelCreditsCost?.["claude-3-5-sonnet-latest"]?.minInputTokens} tokens.`,
+            minOutputTokens: `${modelCreditsCost?.["claude-3-5-sonnet-latest"]?.minOutputTokens} tokens.`
+        },
+        // {
+        //     key: 'deepseek-chat',
+        //     model: 'deepseek-chat',
+        //     inputCost: `${modelCreditsCost?.['deepseek-chat']?.input * 1000} credits per 1000 tokens.`,
+        //     outputCost: `${modelCreditsCost?.["deepseek-chat"]?.output * 1000} credits per 1000 tokens.`,
+        //     rateLimit: `${modelCreditsCost?.["deepseek-chat"]?.rateLimit} requests per minute.`,
+        //     minInputTokens: `${modelCreditsCost?.["deepseek-chat"]?.minInputTokens} tokens.`,
+        //     minOutputTokens: `${modelCreditsCost?.["deepseek-chat"]?.minOutputTokens} tokens.`
+        // },
+        // {
+        //     key: 'deepseek-reasoner',
+        //     model: 'deepseek-reasoner',
+        //     inputCost: `${modelCreditsCost?.['deepseek-reasoner']?.input * 1000} credits per 1000 tokens.`,
+        //     outputCost: `${modelCreditsCost?.["deepseek-reasoner"]?.output * 1000} credits per 1000 tokens.`,
+        //     rateLimit: `${modelCreditsCost?.["deepseek-reasoner"]?.rateLimit} requests per minute.`,
+        //     minInputTokens: `${modelCreditsCost?.["deepseek-reasoner"]?.minInputTokens} tokens.`,
+        //     minOutputTokens: `${modelCreditsCost?.["deepseek-reasoner"]?.minOutputTokens} tokens.`
+        // },
         {
             key: '6',
             model: 'Search Question',

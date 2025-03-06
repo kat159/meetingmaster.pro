@@ -1,6 +1,8 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { useState } from "react";
 import { CloseOutlined, PlusOutlined } from "@ant-design/icons";
+import { C_List } from "./P_GetStarted_V2";
+import { useNavigate } from "react-router-dom";
 // 单个 FAQ 项目组件
 function FAQItem({ number, question, answer, isOpen, onToggle }) {
     return (
@@ -68,13 +70,31 @@ function FAQItem({ number, question, answer, isOpen, onToggle }) {
 
 // FAQ 页面
 export default function P_FAQ_V2() {
+    const nav = useNavigate();
     const faqs = [
         // {
         //     question: "How is the app window visible in your video while you claim it's hidden from screen capture?",
         //     answer: "We temporarily disabled that feature while recording the video guides to provide clearer demonstrations. However, rest assured that the app you receive will always include the feature to hide from screen sharing.",
         // },
         {
-            question: "How can I test if your app hides during full-screen sharing?",
+            question: "Which industries are supported?",
+            answer: <C_List items={[
+                `We support all industries, including software engineering, sales, marketing, finance, and more.`,
+                `For quick start, go to the "Experience" section in the app and paste your resume or work experience. During the interview, press Alt+1, and the AI will automatically use your experience to generate tailored responses. Press Alt+Shift+1 to toggle auto-trigger.`,
+                <span>Some interviews may include different types of questions, so you might need to create different prompts for different question types to get the best answers.
+                    {' '}You can watch the videos in the
+                    {' '}<span className="link" onClick={() => nav("/get-started")}>Get Started</span>
+                    {' '}to learn how to create custom requests with different prompts to deal with different types of questions.</span>
+            ]} />
+        },
+        {
+            question: "What interview platforms is the app compatible with?",
+            answer: <C_List items={[
+                `Since it's a desktop application, our app is compatible with all major video platforms, including Zoom, Skype, Google Meet, and Microsoft Teams, as well as most online assessment platforms like LeetCode, HackerRank, and CodeSignal.`,
+            ]}/>,
+        },
+        {
+            question: "How can I test if your app is invisible during full-screen sharing?",
             answer: <div>
                 <div>
                     <strong>Zoom Example:</strong>
@@ -141,7 +161,7 @@ export default function P_FAQ_V2() {
         },
         // {
         //     question: "Can I upload my resume/experience for AI-generated answers?",
-        //     answer: "Yes, go to 'Experience,' paste your resume/experience. Press Alt+1 during the interview, the AI will use it to generate tailored answers. Watch the videos in 'Get Started' for how it works and create your custom requests.",
+        //     answer: "Yes, go to 'Experience' in the app, paste your resume/experience. Press Alt+1 during the interview, the AI will use it to generate tailored answers. Watch the videos in 'Get Started' for how it works and create your custom requests.",
         // },
         // {
         //     question: "What model do you use for local GPU-based Transcription?",
@@ -149,31 +169,33 @@ export default function P_FAQ_V2() {
         // },
         {
             question: "How is the credit usage calculated?",
-            answer: "Check the 'Pricing' page for details."
+            answer: <span>Check the {' '}
+                <span className="link" onClick={() => nav("/pricing")}>Pricing</span>
+                {' '}page for details.</span>,
         },
-        {
-            question: "Is your app helping interviewees cheat in interviews?",
-            answer: <div>
-                {/* <div className="mb-2">
-                    No, this app is designed to assist you in presenting your <strong>best self</strong> during interviews.
-                </div> */}
-                <div className="mb-2">
-                    No, when we say <strong>"stealthy"</strong> or <strong>"safe"</strong>, we are not talking about hiding cheating from interviewers.
-                    We simply aim to minimize the chances of <strong>losing points</strong> during the interview process.
-                </div>
-                <div className="mb-2">
-                    For example, the <strong>"hide from screen sharing"</strong> feature ensures that the app does not obstruct
-                    any content that the interviewer needs to see.
-                </div>
-                <div className="mb-2">
-                    Similarly, the <strong>"avoid eye movement"</strong> feature is designed to help improve your <strong>impression score</strong>.
-                    Frequent or erratic eye movements can negatively impact how interviewers perceive you.
-                    Think about it: when speaking to someone who maintains steady eye contact versus someone whose
-                    eyes nervously dart around—who do you think leaves a better impression?
-                </div>
+        // {
+        //     question: "Is your app helping interviewees cheat in interviews?",
+        //     answer: <div>
+        //         {/* <div className="mb-2">
+        //             No, this app is designed to assist you in presenting your <strong>best self</strong> during interviews.
+        //         </div> */}
+        //         <div className="mb-2">
+        //             No, when we say <strong>"stealthy"</strong> or <strong>"safe"</strong>, we are not talking about hiding cheating from interviewers.
+        //             We simply aim to minimize the chances of <strong>losing points</strong> during the interview process.
+        //         </div>
+        //         <div className="mb-2">
+        //             For example, the <strong>"hide from screen sharing"</strong> feature ensures that the app does not obstruct
+        //             any content that the interviewer needs to see.
+        //         </div>
+        //         <div className="mb-2">
+        //             Similarly, the <strong>"avoid eye movement"</strong> feature is designed to help improve your <strong>impression score</strong>.
+        //             Frequent or erratic eye movements can negatively impact how interviewers perceive you.
+        //             Think about it: when speaking to someone who maintains steady eye contact versus someone whose
+        //             eyes nervously dart around—who do you think leaves a better impression?
+        //         </div>
 
-            </div>,
-        },
+        //     </div>,
+        // },
         {
             question: "Why should I use an interview assistant?",
             answer: <div>
@@ -201,10 +223,10 @@ export default function P_FAQ_V2() {
                 </div>
             </div>
         },
-        {
-            question: "Can I use your app in school exams?",
-            answer: "Only if your school allows it. Please use it responsibly.",
-        },
+        // {
+        //     question: "Can I use your app in school exams?",
+        //     answer: "Only if your school allows it. Please use it responsibly.",
+        // },
         {
             question: "The app has been unintentionally zoomed in. How can I fix it?",
             answer: "Press F1.",
@@ -336,8 +358,8 @@ export default function P_FAQ_V2() {
                 <h2 className="title">
                     Frequently Asked Questions
                 </h2>
-                <p 
-                className="title-desc-text"
+                <p
+                    className="title-desc-text"
                 >
                     Still you have any questions? Contact our Team via meetlingmaster@gmail.com.
                 </p>
