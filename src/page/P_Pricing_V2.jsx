@@ -23,8 +23,8 @@ export let credit_screenshot = NaN
 export let credit_transcribe_per_second = NaN
 export let credit_OA_per_second = NaN
 export let credit_per_question = NaN
+export let credit_per_question_search = NaN
 export let modelCreditsCost = {
-
     'gpt-4o': {
         input: NaN,
         output: NaN,
@@ -154,7 +154,14 @@ export function C_CreditCost() {
         {
             key: '6',
             model: 'Search Question',
-            inputCost: `${credit_per_question} credits per 1 question. `,
+            inputCost: <div>
+                <div>
+                    {credit_per_question_search} + {credit_per_question} credits per 1 question.
+                </div>
+                <div style={{ color: 'gray', fontSize: '0.8em', fontStyle: 'italic' }}>
+                    e.g. searching with 100 questions would cost {credit_per_question_search + credit_per_question * 100}({credit_per_question_search} + {credit_per_question * 100}) credits.
+                </div>
+            </div>,
             // For example, searching answers with 100 questions would cost ${credit_per_question * 100} credits.`,
             outputCost: `-`,
             rateLimit: `-`,
@@ -270,7 +277,7 @@ export const C_FreeTrialPolicy_Popover = () => {
             maxHeight: "80vh",
             overflow: "auto",
         }}
-        
+
         content={<C_FreeTrialPolicy />}
         trigger="click"
     >
@@ -628,6 +635,7 @@ export default function P_Pricing_V2({
                 credit_OA_per_second = data.credit_OA_per_second;
                 credit_per_question = data.credit_per_question;
                 modelCreditsCost = data.modelCreditsCost;
+                credit_per_question_search = data.credit_per_question_search;
                 setLoading(false);
             } catch (error) {
                 console.error(error);
@@ -916,7 +924,7 @@ const searchQuestion = {
     questions: 100,
     requestNum: 30,
     get request_credits() {
-        return Math.round(this.questions * credit_per_question);
+        return Math.round(this.questions * credit_per_question + credit_per_question_search);
     },
     get request_cost() {
         return Math.round(this.total_credits / 1000);
@@ -975,7 +983,7 @@ const InterviewCostDetails = () => {
             ],
         },
         {
-            title: `3. Adding Question-Search with ${searchQuestion.questions} Prepared Quesitons (enough to ACE 99.9% of interviews)`,
+            title: `3. Adding Question-Search with ${searchQuestion.questions} Prepared Quesitons.`,
             details: [
                 `Each request costs around ${searchQuestion.request_credits} credits.`,
                 `If you perform ${searchQuestion.requestNum} searches, the credit consumption would be around ${searchQuestion.total_credits} credits.`,
