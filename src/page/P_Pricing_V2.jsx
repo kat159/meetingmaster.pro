@@ -303,7 +303,7 @@ export const C_FreeTrialPolicy = () => {
                     <li>After exiting an interview, Trial Credits will be refilled from the Trial Credit Stock after {(v_resetPeriod ?? 0) / 1000} seconds.</li>
                     <li>A maximum of {v_credits.toLocaleString()} Trial Credits can be used per interview. This can be increased by purchasing credits.</li>
                     <li>A maximum of {v_OA_Cap.toLocaleString()} Trial Credits can be used per online assessment.</li>
-                    <li><C_AccountSharingPolicy /></li>
+                    {/* <li><C_AccountSharingPolicy /></li> */}
                 </ul>
             </section>
         </div>
@@ -449,7 +449,7 @@ export const C_ReferralProgram = () => {
                     <li>Each user can be referred up to {new_user_referral_times} times.</li>
                     <li>Each user can refer unlimited new users.</li>
                     <li>Each payment can only set one referrer.</li>
-                    <li><C_AccountSharingPolicy /></li>
+                    {/* <li><C_AccountSharingPolicy /></li> */}
                 </ul>
             </section>
 
@@ -506,7 +506,7 @@ export const C_ReferralProgram = () => {
 };
 
 export const C_AccountSharingPolicy = () => {
-    return null
+    // return null
     return <div>
         Creating Multiple Accounts and Account Sharing are <strong>strictly prohibited</strong>.
     </div>
