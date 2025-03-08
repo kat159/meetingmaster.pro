@@ -4,7 +4,7 @@ import { CloseOutlined, DownloadOutlined, PlusOutlined, VideoCameraOutlined, Win
 import { Button, List, Popover, Space, Table } from "antd";
 import { C_FAQs } from "./P_FAQ_V2";
 
-const curVersion = '3.6.8';
+const curVersion = '3.7.3';
 const downloadData = [
     {
         platform: "Windows",
