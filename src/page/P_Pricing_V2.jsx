@@ -506,6 +506,7 @@ export const C_ReferralProgram = () => {
 };
 
 export const C_AccountSharingPolicy = () => {
+    return null
     return <div>
         Creating Multiple Accounts and Account Sharing are <strong>strictly prohibited</strong>.
     </div>
@@ -566,9 +567,9 @@ export const C_AccountSharingPolicy = () => {
                 </div>
             }
         >
-            <div className="link">
+            {/* <div className="link">
                 Creating Multiple Accounts and Account Sharing are strictly prohibited.
-            </div>
+            </div> */}
         </Popover>
 
         // <Popover
