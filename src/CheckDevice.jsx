@@ -1,10 +1,12 @@
 import { useEffect, useState, startTransition } from 'react';
 import App_Moble from './App_Moble';
 import App_V2 from './App_V2';
+import ReactGA from "react-ga4";
 
 export default function CheckDevice() {
     const [isMobile, setIsMobile] = useState(window.screen.width < 1024);
-
+    ReactGA.initialize("GTM-5SB75X34");
+    ReactGA.send("pageview");
     useEffect(() => {
         const handleResize = () => {
             const newIsMobileDevice = window.screen.width < 1024; // 手机要用screen.width判断
