@@ -5,7 +5,7 @@ import ReactGA from "react-ga4";
 
 export default function CheckDevice() {
     const [isMobile, setIsMobile] = useState(window.screen.width < 1024);
-    ReactGA.initialize("GTM-5SB75X34");
+    ReactGA.initialize("G-BM6CQYW8K0");
     ReactGA.send("pageview");
     useEffect(() => {
         const handleResize = () => {
