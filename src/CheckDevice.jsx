@@ -6,7 +6,7 @@ import ReactGA from "react-ga4";
 export default function CheckDevice() {
     const [isMobile, setIsMobile] = useState(window.screen.width < 1024);
     useEffect(() => {
-        ReactGA.initialize("G-BM6CQYW8K0");
+        ReactGA.initialize("G-MPP138NT24");
         ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Home Page'});
     }, [])
     
