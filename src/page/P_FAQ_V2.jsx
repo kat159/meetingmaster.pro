@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-pascal-case */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CloseOutlined, PlusOutlined } from "@ant-design/icons";
 import { C_List } from "./P_GetStarted_V2";
 import { useNavigate } from "react-router-dom";
+import ReactGA from "react-ga4";
 // 单个 FAQ 项目组件
 function FAQItem({ number, question, answer, isOpen, onToggle }) {
     return (
@@ -70,6 +71,10 @@ function FAQItem({ number, question, answer, isOpen, onToggle }) {
 
 // FAQ 页面
 export default function P_FAQ_V2() {
+    useEffect(() => { // GA4
+        ReactGA.initialize("G-MPP138NT24");
+        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Home Page' });
+    }, [])
     const nav = useNavigate();
     const faqs = [
         // {
@@ -91,7 +96,7 @@ export default function P_FAQ_V2() {
             question: "What interview platforms is the app compatible with?",
             answer: <C_List items={[
                 `Since it's a desktop application, our app is compatible with all major video platforms, including Zoom, Skype, Google Meet, and Microsoft Teams, as well as most online assessment platforms like LeetCode, HackerRank, and CodeSignal.`,
-            ]}/>,
+            ]} />,
         },
         {
             question: "How can I test if your app is invisible during full-screen sharing?",

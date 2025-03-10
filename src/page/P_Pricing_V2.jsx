@@ -18,6 +18,7 @@ import { C_List } from "./P_GetStarted_V2";
 import { GiftOutlined, ShareAltOutlined, TrophyOutlined } from '@ant-design/icons';
 import "./P_Pricing.css";
 const wordToTokens = 1.33
+import ReactGA from "react-ga4";
 
 export let credit_screenshot = NaN
 export let credit_transcribe_per_second = NaN
@@ -613,6 +614,10 @@ export default function P_Pricing_V2({
     const [options, setOptions] = useState([]);
     const [paymentData, setPaymentData] = useState({});
     const [loading, setLoading] = useState(true);
+    useEffect(() => { // GA4
+        ReactGA.initialize("G-MPP138NT24");
+        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Home Page'});
+    }, [])
     useEffect(() => {
         async function fetchData() {
             try {
