@@ -5,11 +5,7 @@ import ReactGA from "react-ga4";
 
 export default function CheckDevice() {
     const [isMobile, setIsMobile] = useState(window.screen.width < 1024);
-    useEffect(() => {
-        ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Home Page'});
-    }, [])
-    
+
     useEffect(() => {
         const handleResize = () => {
             const newIsMobileDevice = window.screen.width < 1024; // 手机要用screen.width判断
