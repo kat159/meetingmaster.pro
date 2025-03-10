@@ -4,6 +4,7 @@ import { CloseOutlined, PlusOutlined } from "@ant-design/icons";
 import { C_List } from "./P_GetStarted_V2";
 import { useNavigate } from "react-router-dom";
 import ReactGA from "react-ga4";
+import { f_gaevent } from "../util";
 // 单个 FAQ 项目组件
 function FAQItem({ number, question, answer, isOpen, onToggle }) {
     return (
@@ -72,8 +73,8 @@ function FAQItem({ number, question, answer, isOpen, onToggle }) {
 // FAQ 页面
 export default function P_FAQ_V2() {
     useEffect(() => { // GA4
-        ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: FAQ' });
+        ReactGA.initialize("GTM-5RMJJL6X");
+        ReactGA.send({ hitType: "pageview",  title: 'Page: FAQ' });
     }, [])
     const nav = useNavigate();
     const faqs = [
@@ -374,7 +375,7 @@ export default function P_FAQ_V2() {
         </section>
     );
 }
-export function C_FAQs({ faqs }) {
+export function C_FAQs({ faqs, }) {
     const [openIndex, setOpenIndex] = useState(null);
 
     return <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-7xl mx-auto items-start"
@@ -389,9 +390,10 @@ export function C_FAQs({ faqs }) {
                     question={faq.question}
                     answer={faq.answer}
                     isOpen={openIndex === index}
-                    onToggle={() =>
+                    onToggle={() => {
                         setOpenIndex(openIndex === index ? null : index)
-                    }
+                        f_gaevent({ category: "FAQ expand", label: faq.question, action: `FAQ expand ${faq.question}` });
+                    }}
                 />
             )
         }

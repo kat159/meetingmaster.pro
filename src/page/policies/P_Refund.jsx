@@ -6,8 +6,8 @@ const htmlContent = `
 
 export default function P_Refund() {
     useEffect(() => {
-        ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: Refund Policy' });
+        ReactGA.initialize("GTM-5RMJJL6X");
+        ReactGA.send({ hitType: "pageview",  title: 'Page: Refund Policy' });
     }, [])
     return (
         <div style={{ padding: "50px" }}>

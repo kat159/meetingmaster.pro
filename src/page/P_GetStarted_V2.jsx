@@ -4,6 +4,7 @@ import { CloseOutlined, DownloadOutlined, PlusOutlined, VideoCameraOutlined, Win
 import { Button, List, Popover, Space, Table } from "antd";
 import { C_FAQs } from "./P_FAQ_V2";
 import ReactGA from "react-ga4";
+import { f_gaevent } from "../util";
 
 const curVersion = '3.7.3';
 const downloadData = [
@@ -15,7 +16,7 @@ const downloadData = [
         link: `https://github.com/meetingmaster/meeting-master-general/releases/download/v${curVersion}/meeting-master_${curVersion}.exe`,
         // link: `https://github.com/meetingmaster/meeting-master-general/releases/download/v3.6.8/meeting-master_3.6.8.exe`,
     }
-]; 
+];
 
 const TT_FAQs_ = ({ faqs, head, botton }) => {
     return (
@@ -69,8 +70,9 @@ const faqs_QuestionSearch = <TT_FAQs_ faqs={[
 leading the system to think the previous questions were also unanswered.`
     },
     {
-        question: "Sometimes, partially related answers are returned. For example, in the video, when I tested by asking about Object-Oriented Programming, the system returned answers for both OOP and Functional Programming.",
-        answer: `Yes, the system sometimes returns related questions instead of only questions strictly matching the input. In this case, it's because Functional programming and OOP both belong to Programming Paradigms. This behavior is somewhat random. However, rest assured, this will not cause the loss of precisely matched answers.`
+        question: "Question Search: partially related answers are returned.",
+        answer: `Yes, the system sometimes returns related questions instead of only questions strictly matching the input. In this case, it's because Functional programming and OOP both belong to Programming Paradigms. This behavior is somewhat random. However, rest assured, this will not cause the loss of precisely matched answers.
+For example, in the video, when I tested by asking about Object-Oriented Programming, the system returned answers for both OOP and Functional Programming.`
     },
     {
         question: `I have imported thousands of questions, how to delete them all?`,
@@ -151,9 +153,11 @@ const quickStartData = {
             </div>
         },
         {
+            subtitle: "Showcase - Multi-Win Auto-Type Auto-Trigger",
             youtubeSrc: "Othp7Gek1wE",
         },
         {
+            subtitle: "Showcase - Multi-Win No-Auto-Type No-Auto-Trigger",
             youtubeSrc: "11LKLJF_LIE",
         },
     ],
@@ -183,13 +187,18 @@ const faq = [
         </div>
     },
     {
-        question: "Why does the system return answers for previous questions during my test?",
-        answer: `This happens when you didn't verbally answer the question, or the answer was incomplete 
-leading the system to think the previous questions were also unanswered.`
+        question: "Question Search: answers for previous questions returned during my test?",
+        answer: <C_List items={[
+            "Rest assured, this will not result in the loss of precisely matched answers.",
+            "Returned answers will be ordered by relevance, meaning that most of the time, the first result is the one you're looking for (Press Alt + NumPad1).",
+            `This happens when you didn't verbally answer the question, or the answer was incomplete leading the system to think the previous questions were also unanswered.`,
+        ]} />,
     },
     {
-        question: "Sometimes, partially related answers are returned. For example, in the video, when I tested by asking about Object-Oriented Programming, the system returned answers for both OOP and Functional Programming.",
-        answer: `Yes, the system sometimes returns related questions instead of only questions strictly matching the input. In this case, it's because Functional programming and OOP both belong to Programming Paradigms. This behavior is somewhat random. However, rest assured, this will not cause the loss of precisely matched answers.`
+        question: "Question Search: partially related answers are returned.",
+        answer: <C_List items={[
+            `Again, this will not result in the loss of precisely matched answers. And the returned answers will be ordered by relevance.`,
+        ]} />,
     },
     {
         question: `I have imported thousands of questions, how to delete them all?`,
@@ -291,8 +300,8 @@ const C_WhatsNew = () => {
 export default function P_GetStarted_V2() {
     const [openIndex, setOpenIndex] = useState(null);
     useEffect(() => {
-        ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Page:Get Started'});
+        ReactGA.initialize("GTM-5RMJJL6X");
+        ReactGA.send({ hitType: "pageview", title: 'Page: Get Started' });
     }, [])
     return (
         <section className="bg-black text-white ">
@@ -315,7 +324,7 @@ export default function P_GetStarted_V2() {
                         content={<div>
                             {
                                 downloadData.map(({ platform, icon, version, link }, index) => (
-                                    <div key={index}> 
+                                    <div key={index}>
                                         <div className="download-note">
                                             Your browser or operating system might flag our software as potentially unsafe, but please rest assured — our software is completely safe to use. This is a false positive caused by the way some systems handle less commonly downloaded software.
                                         </div>
@@ -327,6 +336,7 @@ export default function P_GetStarted_V2() {
                                             target="_blank"
                                             rel="noreferrer"
                                             alt="Download"
+                                            onClick={() => { f_gaevent({ category: "Button", action: `Download ${platform}`, label: `Download ${platform}` }); }}
                                         >
                                             <span className="download-icon">
                                                 {icon}
@@ -342,6 +352,7 @@ export default function P_GetStarted_V2() {
                     >
                         <div
                             className="link"
+                            onClick={() => { f_gaevent({ category: "Button", action: `Download Show Popover`, label: `Download Show Popover` }); }}
                         >
                             <DownloadOutlined className="link-icon" style={{ marginRight: '5px' }} />
                             Download App

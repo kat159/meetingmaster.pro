@@ -18,6 +18,7 @@ import { C_List } from "./P_GetStarted_V2";
 import { GiftOutlined, ShareAltOutlined, TrophyOutlined } from '@ant-design/icons';
 import "./P_Pricing.css";
 import ReactGA from "react-ga4";
+import { f_gaevent } from "../util";
 const wordToTokens = 1.33
 
 
@@ -273,6 +274,9 @@ const v_desc = `
 
 const { Title, Text } = Typography;
 export const C_FreeTrialPolicy_Popover = () => {
+    useEffect(() => {
+        f_gaevent({ category: "Free Trial Policy", action: "Click Free Trial Policy" });
+    }, [])
     return <Popover
         overlayStyle={{
             maxWidth: "80vw",
@@ -426,6 +430,9 @@ export const C_CreditGainExample = () => {
     </div>
 }
 export const C_ReferralProgram_Popover = () => {
+    useEffect(() => {
+        f_gaevent({ category: "Referral Program", action: "Click Referral Program" });
+    }, [])
     return <Popover
         overlayStyle={{
             maxWidth: "min(1200px, 80vw)",
@@ -616,8 +623,8 @@ export default function P_Pricing_V2({
     const [paymentData, setPaymentData] = useState({});
     const [loading, setLoading] = useState(true);
     useEffect(() => { // GA4
-        ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: Pricing'});
+        ReactGA.initialize("GTM-5RMJJL6X");
+        ReactGA.send({ hitType: "pageview",  title: 'Page: Pricing'});
     }, [])
     useEffect(() => {
         async function fetchData() {
@@ -683,8 +690,10 @@ export default function P_Pricing_V2({
     };
 
     const f_handleCardClick = async (credits) => {
+        f_gaevent({ action: `Click Payment Card ${credits} Credits` });
         const { idToken } = (await f_handleAuth()) || {};
         if (!idToken) return;
+        f_gaevent({ action: `Proceed Payment ${credits} Credits` });
         // 创建一个隐藏表单并提交
         const form = document.createElement("form");
         // form.action = "http://localhost:3673/create-checkout-session";
@@ -712,13 +721,14 @@ export default function P_Pricing_V2({
     return (
         isLogining ? <Spin
             size="large"
-            style={{ position: "fixed", top: "50%", left: "50%" }}
+            style={{ position: "fixed", top: "50%", left: "50%", }}
             title="Wait a second, loading payment page..."
         />
             :
             <Spin
+                className="loading-spin"
                 size="large"
-                style={{ position: "fixed", top: "50%", left: "50%" }}
+                // style={{ position: "fixed", top: "50%", left: "50%" }}
                 // title="Wait a second, loading payment page..."
                 spinning={loading}
             >
@@ -749,7 +759,6 @@ export default function P_Pricing_V2({
 function Cards_DeskTop({
     options,
     f_handleCardClick,
-
 }) {
     return (
         <Row

@@ -3,7 +3,8 @@ import React from "react";
 import { CheckCircleFilled, CheckCircleOutlined, EyeFilled, EyeOutlined, SafetyCertificateFilled, SafetyCertificateOutlined } from "@ant-design/icons";
 import config from "../config";
 import { NavLink, useNavigate } from 'react-router-dom';
-
+import ReactGA from "react-ga4";
+import { f_gaevent } from "../util";
 const data = {
     title: "Why Choose Meeting Master?",
     desc: [
@@ -72,7 +73,7 @@ function FeatureCard({ iconSrc, icon, title, description, buttonText }) {
             {/* 占位符推动按钮到底部 */}
             <div className="flex-grow"></div>
             {/* 按钮 */}
-            <NavLink to="/get-started" >
+            <NavLink to="/get-started" onClick={() => { f_gaevent({ category: "Button", action: `Click Learn More - ${title}`, label: `Learn More - ${title}` }); }}>
                 <div className="flex justify-center mt-auto" style={{ marginTop: '50px' }}>
                     <button
                         className="w-full bg-[#222] text-white py-2 px-4 rounded-md hover:bg-[#333] transition text-[1.5rem]"
@@ -115,7 +116,7 @@ function FeatureCard_Mobile({ iconSrc, icon, title, description, buttonText }) {
             <div className="flex-grow"></div>
 
             {/* 按钮 */}
-            <NavLink to="/get-started">
+            <NavLink to="/get-started" onClick={() => { f_gaevent({ category: "Button", action: `Click Learn More - ${title}`, label: `Learn More - ${title}` }); }}>
                 <div className="flex justify-start">
                     <button
                         className="text-[1rem] mt-4 w-full bg-[#222] text-white py-2 px-4 rounded-md hover:bg-[#333] transition"

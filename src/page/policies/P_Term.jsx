@@ -2525,8 +2525,8 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><strong>
 `
 export default function P_Term() {
     useEffect(() => {
-        ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: Terms of Service' });
+        ReactGA.initialize("GTM-5RMJJL6X");
+        ReactGA.send({ hitType: "pageview",  title: 'Page: Terms of Service' });
     }, [])
     return (
         <div style={{ padding: '50px' }}

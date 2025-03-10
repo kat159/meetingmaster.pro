@@ -17,6 +17,7 @@ import { MailOutlined } from "@ant-design/icons";
 import ReactGA from "react-ga4";
 import P_Home_V2 from "./page/P_Home_V2";
 import P_404 from "./page/P_404";
+import { f_gaevent } from "./util";
 const P_FAQ_V2 = lazy(() => import("./page/P_FAQ_V2"));
 const P_GetStarted_V2 = lazy(() => import("./page/P_GetStarted_V2"));
 const P_Pricing_V2 = lazy(() => import("./page/P_Pricing_V2"));
@@ -76,7 +77,7 @@ function Header() {
             {/* <NavLink to="https://discord.gg/FRjfZteqvx" target="_blank" rel="noopener noreferrer" className="nav-link">
                 <DiscordOutlined style={{ transform: "scale(1.5)" }} />
             </NavLink> */}
-            <NavLink to="mailto:meetlingmaster@gmail.com" target="_blank" rel="noopener noreferrer" className="nav-link">
+            <NavLink to="mailto:meetlingmaster@gmail.com" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={() => f_gaevent({ action: `Click Email - Header`, label: "Email - Header" })}>
                 <MailOutlined style={{ transform: "scale(1.5)" }} />
             </NavLink>
         </div>
@@ -87,7 +88,7 @@ function Body() {
     const noLayoutPaths = ["/terms", "/privacy", "/refund", "/cookie"];
     const hideLayout = noLayoutPaths.includes(location.pathname);
     // if (hideLayout) {
-    //     console.log("Hide Layout");
+
     //     return <div className="terms">
     //         <Routes>
     //             <Route path="/terms" element={<P_Term />} />

@@ -1,7 +1,10 @@
+/* eslint-disable react/jsx-pascal-case */
 import React, { useEffect, useState } from "react";
 import P_WhyUs_V2, { P_WhyUs_Mobile } from "./P_WhyUs_V2";
 import { NavLink } from "react-router-dom";
 import ReactGA from "react-ga4";
+import { C_Button_Normal } from "../component/C_Button";
+import { f_gaevent } from "../util";
 const videoId = "hIymljYf-iQ";
 const data = {
     // video: "https://www.youtube.com/embed/hIymljYf-iQ",
@@ -12,8 +15,8 @@ const data = {
 }
 export function P_Home_Mobile() {
     useEffect(() => {
-        ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: Home'});
+        ReactGA.initialize("GTM-5RMJJL6X");
+        ReactGA.send({ hitType: "pageview", title: 'Page: Home' });
     }, [])
     return (
         <div >
@@ -51,11 +54,13 @@ export function P_Home_Mobile() {
 
 const VideoIframe = () => {
     const [isShow, setIsShow] = React.useState(false);
+    const [clickTimes, setClickTimes] = useState(0);
     useEffect(() => {
         setIsShow(true);
     }, []);
 
     if (!isShow) return null;
+
     return <iframe
         title="video"
         src={data.video}
@@ -66,8 +71,8 @@ const VideoIframe = () => {
 }
 function P_Home_V2() {
     useEffect(() => {
-        ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: Home'});
+        ReactGA.initialize("GTM-5RMJJL6X");
+        ReactGA.send({ hitType: "pageview", title: 'Page: Home' });
     }, [])
     return (
         <div >
@@ -88,13 +93,15 @@ function P_Home_V2() {
 
                         {/* 右侧按钮和文本 */}
                         <div className="w-full md:w-1/3 flex flex-col justify-between items-center space-y-4 md:space-y-0 gap-4">
-                            <NavLink to="/get-started" >
-                                <button className="bg-blue-300 text-black font-semibold px-6 py-3 rounded-lg hover:bg-blue-400 transition"
-                                    // onClick={() => {nav('/get-started')}}
+                            <NavLink to="/get-started"
+                                onClick={() => { f_gaevent({ category: "Button", action: `Click Start For Free - Home`, label: "Start For Free - Home" }); }}
+                            >
+                                <C_Button_Normal className="bg-blue-300 text-black font-semibold px-6 py-3 rounded-lg hover:bg-blue-400 transition"
+
                                     style={{ fontSize: '20px' }}
                                 >
                                     Start For Free
-                                </button>
+                                </C_Button_Normal>
                             </NavLink>
                             <p
                                 className="text-gray-400 text-center md:text-left leading-relaxed"

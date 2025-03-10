@@ -2,7 +2,6 @@ import { useEffect, useState, startTransition } from 'react';
 import App_Moble from './App_Moble';
 import App_V2 from './App_V2';
 
-
 export default function GA4() {
 
     return <CheckDevice />;

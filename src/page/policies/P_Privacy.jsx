@@ -3183,8 +3183,8 @@ const htmlContent = `
 
 export default function P_Privacy() {
     useEffect(() => {
-        ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: Privacy Policy' });
+        ReactGA.initialize("GTM-5RMJJL6X");
+        ReactGA.send({ hitType: "pageview",  title: 'Page: Privacy Policy' });
     }, [])
     return (
         <div style={{ padding: '50px' }}>
