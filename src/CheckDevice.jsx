@@ -1,13 +1,10 @@
 import { useEffect, useState, startTransition } from 'react';
 import App_Moble from './App_Moble';
 import App_V2 from './App_V2';
-import ReactGA from "react-ga4";
+
 
 export default function GA4() {
-    useEffect(() => {
-        ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Page: Home'});
-    }, []);
+
     return <CheckDevice />;
 }
 export function CheckDevice() {

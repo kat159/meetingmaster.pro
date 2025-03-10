@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import ReactGA from "react-ga4";
 const htmlContent = `
 <div data-custom-class="body">
     <div><strong><span style="font-size: 26px;"><span data-custom-class="title">COOKIE POLICY</span></span></strong>
@@ -303,9 +305,13 @@ const htmlContent = `
 </div>
 `
 export default function P_Cookie() {
-  return (
-    <div style={{ padding: '50px' }}>
-      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-    </div>
-  )
+    useEffect(() => {
+        ReactGA.initialize("G-MPP138NT24");
+        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: Cookie Policy' });
+    }, [])
+    return (
+        <div style={{ padding: '50px' }}>
+            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        </div>
+    )
 }

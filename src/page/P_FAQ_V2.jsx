@@ -73,7 +73,7 @@ function FAQItem({ number, question, answer, isOpen, onToggle }) {
 export default function P_FAQ_V2() {
     useEffect(() => { // GA4
         ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Page: FAQ' });
+        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: FAQ' });
     }, [])
     const nav = useNavigate();
     const faqs = [

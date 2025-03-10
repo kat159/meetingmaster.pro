@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 
 import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from "react-router-dom";
 
@@ -14,7 +14,7 @@ import { MailOutlined } from "@ant-design/icons";
 // import P_Privacy from "./page/policies/P_Privacy";
 // import P_Refund from "./page/policies/P_Refund";
 // import P_Cookie from "./page/policies/P_Cookie";
-
+import ReactGA from "react-ga4";
 import P_Home_V2 from "./page/P_Home_V2";
 import P_404 from "./page/P_404";
 const P_FAQ_V2 = lazy(() => import("./page/P_FAQ_V2"));
@@ -34,9 +34,9 @@ export default function App_V2() {
 function Header() {
     return <header className="header">
         <div className="header-logo" onClick={() => window.location.href = "/"} >
-                <img src="/icon-taskbard.webp" alt="Logo" className="logo-image" title="Meeting Master" />
-                <div className="logo-text">Meeting Master</div>
-            </div>
+            <img src="/icon-taskbard.webp" alt="Logo" className="logo-image" title="Meeting Master" />
+            <div className="logo-text">Meeting Master</div>
+        </div>
         <nav
             className="nav"
             style={{

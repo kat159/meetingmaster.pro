@@ -1,9 +1,9 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 
 import { ConfigProvider as AntdProvider, theme, Layout, Drawer } from "antd";
 import { DollarCircleOutlined, HomeOutlined, MailOutlined, MenuOutlined, QuestionCircleOutlined, RocketOutlined } from "@ant-design/icons";
-
+import ReactGA from "react-ga4";
 import { P_Home_Mobile } from "./page/P_Home_V2";
 import P_404 from "./page/P_404";
 // import P_FAQ_V2 from "./page/P_FAQ_V2";
@@ -23,6 +23,7 @@ const P_Refund = lazy(() => import("./page/policies/P_Refund"));
 const P_Cookie = lazy(() => import("./page/policies/P_Cookie"));
 
 export default function App_Moble() {
+    
     return <Router>
         <div className="mobile">
             <Body />
@@ -60,11 +61,11 @@ function Header() {
                 Get Started
             </NavLink>
             <NavLink to="/pricing" onClick={onClose} className="nav-link">
-            <DollarCircleOutlined style={{ transform: "scale(1.3)", marginRight: "1rem" }} />
-            Pricing</NavLink>
+                <DollarCircleOutlined style={{ transform: "scale(1.3)", marginRight: "1rem" }} />
+                Pricing</NavLink>
             <NavLink to="/faq" onClick={onClose} className="nav-link">
-            <QuestionCircleOutlined style={{ transform: "scale(1.3)", marginRight: "1rem" }} />
-            FAQ</NavLink>
+                <QuestionCircleOutlined style={{ transform: "scale(1.3)", marginRight: "1rem" }} />
+                FAQ</NavLink>
             <NavLink to="mailto:meetlingmaster@gmail.com" target="_blank" rel="noopener noreferrer" className="nav-link">
                 <MailOutlined style={{ transform: "scale(1.3)", marginRight: "1rem" }} />Contact Us
             </NavLink>

@@ -1,8 +1,14 @@
+import { useEffect } from "react";
+import ReactGA from "react-ga4";
 const htmlContent = `
 
 `;
 
 export default function P_Refund() {
+    useEffect(() => {
+        ReactGA.initialize("G-MPP138NT24");
+        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: Refund Policy' });
+    }, [])
     return (
         <div style={{ padding: "50px" }}>
             {/* <div dangerouslySetInnerHTML={{ __html: htmlContent }} /> */}

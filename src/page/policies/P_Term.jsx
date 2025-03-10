@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import ReactGA from "react-ga4";
 import Markdown from "react-markdown";
 function removeDuplicates(terms) {
     // 用于存储唯一条目的集合
@@ -2522,9 +2524,12 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><strong>
 </div>
 `
 export default function P_Term() {
-
+    useEffect(() => {
+        ReactGA.initialize("G-MPP138NT24");
+        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: Terms of Service' });
+    }, [])
     return (
-        <div style={{padding: '50px'}}
+        <div style={{ padding: '50px' }}
         >
 
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />

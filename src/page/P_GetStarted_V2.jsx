@@ -292,7 +292,7 @@ export default function P_GetStarted_V2() {
     const [openIndex, setOpenIndex] = useState(null);
     useEffect(() => {
         ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Page: Get Started'});
+        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Page:Get Started'});
     }, [])
     return (
         <section className="bg-black text-white ">

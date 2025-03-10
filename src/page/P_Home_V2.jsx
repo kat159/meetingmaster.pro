@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import P_WhyUs_V2, { P_WhyUs_Mobile } from "./P_WhyUs_V2";
 import { NavLink } from "react-router-dom";
-
+import ReactGA from "react-ga4";
 const videoId = "hIymljYf-iQ";
 const data = {
     // video: "https://www.youtube.com/embed/hIymljYf-iQ",
@@ -11,6 +11,10 @@ const data = {
 
 }
 export function P_Home_Mobile() {
+    useEffect(() => {
+        ReactGA.initialize("G-MPP138NT24");
+        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: Home'});
+    }, [])
     return (
         <div >
             <section className="hero">
@@ -61,6 +65,10 @@ const VideoIframe = () => {
     ></iframe>
 }
 function P_Home_V2() {
+    useEffect(() => {
+        ReactGA.initialize("G-MPP138NT24");
+        ReactGA.send({ hitType: "pageview", page: window.location.href, title: 'Page: Home'});
+    }, [])
     return (
         <div >
             <section className="hero">
