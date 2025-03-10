@@ -6,7 +6,7 @@ import ReactGA from "react-ga4";
 export default function GA4() {
     useEffect(() => {
         ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Home Page'});
+        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Page: Home'});
     }, []);
     return <CheckDevice />;
 }

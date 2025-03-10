@@ -617,7 +617,7 @@ export default function P_Pricing_V2({
     useEffect(() => { // GA4
         console.log('url', window?.home?.location);
         ReactGA.initialize("G-MPP138NT24");
-        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Home Page'});
+        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Page: Pricing'});
     }, [])
     useEffect(() => {
         async function fetchData() {
