@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-pascal-case */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CloseOutlined, DownloadOutlined, PlusOutlined, VideoCameraOutlined, WindowsFilled } from "@ant-design/icons";
 import { Button, List, Popover, Space, Table } from "antd";
 import { C_FAQs } from "./P_FAQ_V2";
+import ReactGA from "react-ga4";
 
 const curVersion = '3.7.3';
 const downloadData = [
@@ -289,7 +290,10 @@ const C_WhatsNew = () => {
 }
 export default function P_GetStarted_V2() {
     const [openIndex, setOpenIndex] = useState(null);
-
+    useEffect(() => {
+        ReactGA.initialize("G-MPP138NT24");
+        ReactGA.send({ hitType: "pageview", page: window?.home?.location, title: 'Home Page'});
+    }, [])
     return (
         <section className="bg-black text-white ">
             {/* 标题部分 */}
