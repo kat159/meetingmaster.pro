@@ -73,7 +73,6 @@ function FAQItem({ number, question, answer, isOpen, onToggle }) {
 // FAQ 页面
 export default function P_FAQ_V2() {
     useEffect(() => { // GA4
-        ReactGA.initialize("GTM-5RMJJL6X");
         ReactGA.send({ hitType: "pageview",  title: 'Page: FAQ' });
     }, [])
     const nav = useNavigate();

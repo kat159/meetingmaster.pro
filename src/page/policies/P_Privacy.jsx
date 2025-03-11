@@ -3183,7 +3183,6 @@ const htmlContent = `
 
 export default function P_Privacy() {
     useEffect(() => {
-        ReactGA.initialize("GTM-5RMJJL6X");
         ReactGA.send({ hitType: "pageview",  title: 'Page: Privacy Policy' });
     }, [])
     return (

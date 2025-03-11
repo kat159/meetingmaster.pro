@@ -5,7 +5,6 @@ import ReactGA from "react-ga4";
 
 export default function P_404() {
     useEffect(() => { // GA4
-        ReactGA.initialize("GTM-5RMJJL6X");
         ReactGA.send({ hitType: "pageview",  title: 'Page: Pricing' });
     }, [])
     return (

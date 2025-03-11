@@ -300,7 +300,6 @@ const C_WhatsNew = () => {
 export default function P_GetStarted_V2() {
     const [openIndex, setOpenIndex] = useState(null);
     useEffect(() => {
-        ReactGA.initialize("GTM-5RMJJL6X");
         ReactGA.send({ hitType: "pageview", title: 'Page: Get Started' });
     }, [])
     return (

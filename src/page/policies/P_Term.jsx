@@ -2525,7 +2525,6 @@ Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;"><strong>
 `
 export default function P_Term() {
     useEffect(() => {
-        ReactGA.initialize("GTM-5RMJJL6X");
         ReactGA.send({ hitType: "pageview",  title: 'Page: Terms of Service' });
     }, [])
     return (

@@ -6,7 +6,18 @@ import App_V2 from './App_V2';
 import CheckDevice from './CheckDevice';
 import './index_v2.css';
 import ReactGA from "react-ga4";
-ReactGA.initialize("GTM-5RMJJL6X");
+
+ReactGA.initialize([
+  {
+    trackingId: "GTM-5RMJJL6X",
+    gaOptions: {
+      debug_mode: true,
+    },
+    gtagOptions: {
+      debug_mode: true,
+    },
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

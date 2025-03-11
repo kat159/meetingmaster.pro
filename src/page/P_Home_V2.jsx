@@ -15,7 +15,6 @@ const data = {
 }
 export function P_Home_Mobile() {
     useEffect(() => {
-        ReactGA.initialize("GTM-5RMJJL6X");
         ReactGA.send({ hitType: "pageview", title: 'Page: Home' });
     }, [])
     return (
@@ -71,7 +70,6 @@ const VideoIframe = () => {
 }
 function P_Home_V2() {
     useEffect(() => {
-        ReactGA.initialize("GTM-5RMJJL6X");
         ReactGA.send({ hitType: "pageview", title: 'Page: Home' });
     }, [])
     return (

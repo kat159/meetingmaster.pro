@@ -6,7 +6,6 @@ const htmlContent = `
 
 export default function P_Refund() {
     useEffect(() => {
-        ReactGA.initialize("GTM-5RMJJL6X");
         ReactGA.send({ hitType: "pageview",  title: 'Page: Refund Policy' });
     }, [])
     return (

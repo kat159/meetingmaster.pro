@@ -1,6 +1,5 @@
 import { Button } from "antd";
 import ReactGA from "react-ga4";
-ReactGA.initialize("GTM-5RMJJL6X");
 
 export function C_Button_Ant({ ...params }) {
     return (

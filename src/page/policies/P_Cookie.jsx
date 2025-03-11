@@ -306,7 +306,6 @@ const htmlContent = `
 `
 export default function P_Cookie() {
     useEffect(() => {
-        ReactGA.initialize("GTM-5RMJJL6X");
         ReactGA.send({ hitType: "pageview",  title: 'Page: Cookie Policy' });
     }, [])
     return (

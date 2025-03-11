@@ -623,7 +623,6 @@ export default function P_Pricing_V2({
     const [paymentData, setPaymentData] = useState({});
     const [loading, setLoading] = useState(true);
     useEffect(() => { // GA4
-        ReactGA.initialize("GTM-5RMJJL6X");
         ReactGA.send({ hitType: "pageview",  title: 'Page: Pricing'});
     }, [])
     useEffect(() => {
