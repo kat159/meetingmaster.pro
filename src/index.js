@@ -9,7 +9,7 @@ import ReactGA from "react-ga4";
 
 ReactGA.initialize([
   {
-    trackingId: "GTM-5SB75X34",
+    trackingId: "GTM-5RMJJL6X",
     gaOptions: {
       debug_mode: true,
     },
