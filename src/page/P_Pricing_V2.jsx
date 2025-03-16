@@ -6,7 +6,7 @@ import {
     getAuth,
     signInWithRedirect,
     signInWithPopup,
-    GoogleAuthProvider,
+    GoogleAuthProvider, 
     getRedirectResult,
     RecaptchaVerifier,
 } from "firebase/auth";
