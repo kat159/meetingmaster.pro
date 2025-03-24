@@ -10,12 +10,8 @@ import ReactGA from "react-ga4";
 ReactGA.initialize([
   {
     trackingId: "GTM-5SB75X34",
-    gaOptions: {
-      debug_mode: true,
-    },
-    gtagOptions: {
-      debug_mode: true,
-    },
+    gaOptions: { debug_mode: true, },
+    gtagOptions: { debug_mode: true, },
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
